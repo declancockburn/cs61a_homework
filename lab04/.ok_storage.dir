@@ -1,0 +1,7 @@
+'get_piece-correct', (0, 70)
+'put_piece-correct', (512, 70)
+'make_move-correct', (1024, 70)
+'print_board-correct', (1536, 70)
+'check_win_row-correct', (2048, 70)
+'check_win_column-correct', (2560, 70)
+'check_win-correct', (3072, 70)

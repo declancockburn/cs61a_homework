@@ -1,0 +1,45 @@
+(+ 2 3) -> adds, can also use -, /, *, or quotient
+(number? 3) -> asks if it's a number
+(zero? 2) -> checks if zero
+(integer? 2.2) -> checks if integer
+(if <predicate> <consequent> <alternative>)
+(and <e1> ... <en>) -> not sure about this, also for orYour location
+Define symbol:
+(define <symbol> <expression>) -> e.g. (define pi 3.14)
+New Procedures:
+(define (<symbol> <formal parameters>) <body>)
+    e.g.
+    (define (abs x)
+        (if (< x 0)
+            (- x)
+            x))
+Lambda expressions:
+(lambda (<formal parameters>) <body>)
+
+Pairs and Lists:
+(cons 1 2) -> creates a pair (1 . 2)
+(car <list>) -> returns first element of a list,
+(cdr <list>) -> returns 2nd element of a pair
+nil -> is an empty list
+(cons 1 (cons 2 list)) -> (1 2) a list [linked]
+(pair? (cons 1 2)) -> True
+(null? nil) -> True
+(list 1 2 3 4) -> builds a linked list
+'(1 2 3 4) -> also builds a linked list
+Conditional expression:
+(cond
+    (<p1> <el1>)
+    (<p2> <el2>)
+    ...
+    (<pn> <eln>)
+    (else <else-expressions>))
+   Evaluates <eln> of first true clause <pn>
+
+
+
+
+
+
+
+
+
