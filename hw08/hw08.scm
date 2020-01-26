@@ -100,29 +100,40 @@
 ; TODO on derive product!!
 
 (define (derive-product expr var)
-  'YOUR-CODE-HERE
-)
+  (make-sum (make-product (derive (multiplier expr) var)
+                          (multiplicand expr))
+            (make-product (multiplier expr)
+                          (derive (multiplicand expr) var))))
 
 ; Exponentiations are represented as lists that start with ^.
 (define (make-exp base exponent)
-  'YOUR-CODE-HERE
+  (cond ((=number? exponent 0) 1)
+        ((=number? exponent 1) base)
+        ((and (number? base)(number? exponent)) (expt base exponent))
+        (else (list '^ base exponent))
+  )
 )
 
 (define (base exp)
-  'YOUR-CODE-HERE
+  (car (cdr exp))
 )
 
 (define (exponent exp)
-  'YOUR-CODE-HERE
+  (car (cdr (cdr exp)))
 )
 
 (define (exp? exp)
-  'YOUR-CODE-HERE
-)
+  (cond ((number? exp) #f)
+        ((variable? exp) #f)
+        ((number? (car exp)) #f)
+        ((equal? (car exp) '^) #t)
+        (else #f)
+))
 
 (define x^2 (make-exp 'x 2))
 (define x^3 (make-exp 'x 3))
 
 (define (derive-exp exp var)
-  'YOUR-CODE-HERE
-)
+  (cond ((= (exponent exp) 2) (list '* 2 var))
+        (else (list '* (exponent exp)
+                    (list '^ var (- (exponent exp) 1))))))

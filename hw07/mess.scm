@@ -6,3 +6,8 @@
       guess
         (update (average guess (/ x guess)))))
   (update 1))
+
+(define x
+(if (= 3 3)
+    (1)
+    (2)))
